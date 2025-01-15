@@ -1,0 +1,178 @@
+/* Reset default margin and padding */
+body, ul, li, a, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+   
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4faff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px; /* Adjusted padding for better scaling */
+    background-color: #87cefa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures it stretches across the screen */
+    box-sizing: border-box; /* Includes padding and borders in width calculation */
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #dff6ff;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #fff;
+    color: #87cefa;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #dff6ff;
+    color: #0056b3;
+}
+
+
+
+/* Dropdown container */
+.dropdown, .profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button styling */
+.dropdown-button, .profile-button {
+    background-color: #87cefa;
+    color: rgba(255, 255, 255, 0.942);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-button:hover, .profile-button:hover {
+    background-color: #286f95;
+}
+
+/* Dropdown content styling */
+.dropdown-content, .profile-content {
+    display: none;
+    position: absolute;
+    background-color: #82aed8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    z-index: 1;
+    min-width: 150px;
+}
+
+.dropdown-content a, .profile-content a {
+    color: #000000;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover, .profile-content a:hover {
+    background-color: #00397e;
+}
+
+/* Show dropdown content when hovering */
+.dropdown:hover .dropdown-content,
+.profile-dropdown:hover .profile-content {
+    display: block;
+}
+
+
+.signup-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #87cefa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+    background-color: #4682b4;
+}
