@@ -7,7 +7,7 @@ body, ul, li, a, form, input, button {
    
 }
 
-body {
+/* body {
     font-family: 'Arial', sans-serif;
     background-color: #f4faff;
     display: flex;
@@ -15,7 +15,7 @@ body {
     align-items: center;
     margin: 0;
     
-}
+} */
 
 .navbar {
     display: flex;
@@ -175,4 +175,97 @@ body {
 
 .signup-form button:hover {
     background-color: #4682b4;
+}
+
+.toy-list-container {
+    display: flex;
+    flex-wrap: wrap; /* Wraps toys for responsiveness */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Centers the toy cards */
+    padding: 20px;
+}
+
+.toy-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.toy-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.toy-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.toy-age {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.toy-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+}
+
+.exchange-button,
+.description-button,
+.buy-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.exchange-button {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.description-button {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.exchange-button:hover {
+    background-color: #d32f2f;
+}
+
+.description-button:hover {
+    background-color: #1976D2;
+}
+
+.buy-button:hover {
+    background-color: #388E3C;
+}
+
+@media (max-width: 768px) {
+    .toy-card {
+        width: 150px;
+    }
+    .toy-buttons {
+        flex-direction: column;
+    }
 }
