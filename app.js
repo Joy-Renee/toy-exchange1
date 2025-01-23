@@ -9,6 +9,7 @@ const toys = Array.from({ length: 40 }, (_, index) => {
     else ageGroup = "9-12"
 
     return {
+        id: index + 1,
         name: `Toy ${index + 1}`,
         age: `${1 + index % 12} years`,
         description: `Description for Toy ${index + 1}`,
@@ -30,7 +31,7 @@ function createToyCard(toy) {
             <div class="toy-buttons">
                 <button class="exchange-button">Exchange</button>
                 <button class="description-button">Description</button>
-                <button class="buy-button">Buy</button>
+                <button class="buy-button" onclick="addToCart(${toy.id})">Buy</button>
             </div>
         </div>
     `;
@@ -83,3 +84,52 @@ document.querySelectorAll('.dropdown-content a').forEach((link) => {
     });
 });
 ;
+
+const cart = []; // Array to store toys added to the cart
+
+function addToCart(toyId) {
+    const toy = toys.find((t) =>t.id === toyId);
+    if (!cart.includes(toy)) {
+        cart.push(toy);
+        alert(`${toy.name} has been added to the cart!`);
+    } else {
+        alert(`${toy.name} is already in the cart.`);
+    }
+}
+
+function renderCart() {
+    const cartContainer = document.getElementById('toy-list'); // Use the same container
+    if (cart.length === 0) {
+        cartContainer.innerHTML = '<h2>Your cart is empty.</h2>';
+        return;
+    }
+
+    const cartItems = cart.map((toy) => `
+        <div class="toy-card">
+            <img src="${toy.image}" alt="${toy.name}" class="toy-image">
+            <h3 class="toy-name">${toy.name}</h3>
+            <p class="toy-age">Age: ${toy.age}</p>
+            <p>${toy.description}</p>
+            <button class="remove-button" onclick="removeFromCart(${toy.id})">Remove</button>
+            <button class="message-button" onclick="messageSeller(${toy.id})">Message</button>
+            </div>
+    `).join('');
+
+    cartContainer.innerHTML = `
+        <h2>Your Cart</h2>
+        <div class="cart-items">${cartItems}</div>
+    `;
+}
+
+function removeFromCart(toyId) {
+    const toyIndex = cart.findIndex((toy) => toy.id === toyId);
+    if (toyIndex > -1) {
+        cart.splice(toyIndex, 1);
+        alert('Item removed from the cart.');
+        renderCart(); // Re-render the cart
+    }
+}
+
+function messageSeller(toyId) {
+    
+}
