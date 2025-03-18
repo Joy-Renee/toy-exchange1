@@ -29,12 +29,21 @@ function createToyCard(toy) {
             <h3 class="toy-name">${toy.name}</h3>
             <p class="toy-age">Age: ${toy.age}</p>
             <div class="toy-buttons">
-                <button class="exchange-button">Exchange</button>
+                <button class="exchange-button" onclick="window.location.href='chat.html'">Exchange</button>
                 <button class="description-button">Description</button>
                 <button class="buy-button" onclick="addToCart(${toy.id})">Buy</button>
             </div>
         </div>
     `;
+}
+
+function startExchange(toyId) {
+    const toy = toys.find(t => t.id === toyId);
+    if (toy) {
+        const roomName = `exchange_room_${toy.id}`;
+        localStorage.setItem("chatRoom", roomName); // Store room name for chat.js
+        window.location.href = "chat.html"; // Redirect to chat page
+    }
 }
 
 // Render toys

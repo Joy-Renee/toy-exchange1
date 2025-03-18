@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Exchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Chat Exchange</h2>
+    <div id="chat-container">
+        <div id="toy-details">
+            <h3>Exchange Details</h3>
+            <p><strong>Buyer Toy:</strong> <span id="buyer-toy"></span></p>
+            <p><strong>Seller Toy:</strong> <span id="seller-toy"></span></p>
+        </div>
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+    <script src="chat.js"></script>
+    <script>
+        const socket = io.connect('http://localhost:5000');
+        
+        const chatBox = document.getElementById('chat-box');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value;
+            if (message.trim() !== "") {
+                socket.emit('send_message', { message });
+                messageInput.value = "";
+            }
+        });
+
+        socket.on('receive_message', (data) => {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = `${data.timestamp}: ${data.sender} - ${data.message}`;
+            chatBox.appendChild(messageElement);
+        });
+    </script>
+</body>
+</html>
