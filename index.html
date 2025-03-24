@@ -4,69 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Toy exchange</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Toy Exchange</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">Toy Exchange</div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <div class="dropdown">
-                <button class="dropdown-button">Sign Up▼</button>
-                <div class="dropdown-content">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
 
-                    <form action="/signup" method="post" class="signup-form">
-                        <h4>Sign up</h4>
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <button type="submit">Sign Up</button>
-                    </form>
+            <!-- Signup / Login Dropdown -->
+            
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+            
+
+            <!-- Toys Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-button">Toys ▼</button>
+                <div class="dropdown-content">
+                    <a href="/age0-3" data-age="0-3">Age 0-3</a>
+                    <a href="/age4-6" data-age="4-6">Age 4-6</a>
+                    <a href="/age7-8" data-age="7-8">Age 7-8</a>
+                    <a href="/age9-12" data-age="9-12">Age 9-12</a>
                 </div>
             </div>
 
-        <div class="dropdown">
-            <button class="dropdown-button">Toys ▼</button>
-            <div class="dropdown-content">
-                <a href="/age0-3" data-age="0-3">Age 0-3</a>
-                <a href="/age4-6" data-age="4-6">Age 4-6</a>
-                <a href="/age7-8" data-age="7-8">Age 7-8</a>
-                <a href="/age9-12" data-age="9-12">Age 9-12</a>
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+                <button id="profile-dropdown-btn" class="profile-button">👤 Profile ▼</button>
+                <div id="profile-dropdown-menu" class="profile-content">
+                    <a href="profile.html">View Profile</a>
+                    <a href="#settings">Settings</a>
+                    <a href="#" id="logout-btn">Logout</a>
+                </div>
             </div>
-        </div>
-        <!-- <div id="toy-list-container"></div> -->
+
+            <!-- Cart -->
+            <li><a href="#" onclick="renderCart()">Cart</a></li>
         </ul>
+
+        <!-- Search Bar -->
         <form class="search-form">
             <input type="text" placeholder="Search..." class="search-input">
             <button type="submit" class="search-button">🔍</button>
-        </form> 
-        <div class="profile-dropdown">
-            <button class="profile-button">👤 Profile ▼</button>
-            <div class="profile-content">
-                <a href="#profile">View Profile</a>
-                <a href="#settings">Settings</a>
-                <a href="#logout">Logout</a>
-            </div>
-        </div> 
-        <li><a href="#" onclick="renderCart()">Cart</a></li>
-
+        </form>
     </nav>
 
     <section id="toy-list" class="toy-list-container">
-        <!-- <div class="toy-card">
-            <img src="./images/0-3/1.jpeg" alt="Toy 0-3" class="toy-image">
-            <h3 class="toy-name">Musical lights</h3>
-            <div class="toy-buttons">
-                <button class="exchange-button">Exchange</button>
-                <button class="buy-button">Buy</button>
-            </div>
-        </div> -->
+        <!-- Toy Cards will be dynamically added here -->
     </section>
+
+    <!-- Scripts -->
     <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+    
 </body>
 </html>
-
