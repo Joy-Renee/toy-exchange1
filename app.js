@@ -120,7 +120,6 @@ function renderCart() {
             <p class="toy-age">Age: ${toy.age}</p>
             <p>${toy.description}</p>
             <button class="remove-button" onclick="removeFromCart(${toy.id})">Remove</button>
-            <button class="message-button" onclick="messageSeller(${toy.id})">Message</button>
             </div>
     `).join('');
 
@@ -142,3 +141,4 @@ function removeFromCart(toyId) {
 function messageSeller(toyId) {
     
 }
+

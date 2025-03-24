@@ -1,0 +1,134 @@
+/* General Page Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f8ff; /* Baby Blue */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Home Link */
+a {
+    color: #007acc; /* Light Blue */
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+h2 {
+    color: #007acc;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Chat Container */
+#chat-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 122, 204, 0.2);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Toy Exchange Details */
+#toy-details {
+    background-color: #e3f2fd; /* Lighter Blue */
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#toy-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #007acc;
+}
+
+#toy-details p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Chat Box */
+#chat-box {
+    width: 100%;
+    height: 250px;
+    overflow-y: auto;
+    background-color: #f0f8ff;
+    border: 2px solid #007acc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Messages */
+#chat-box p {
+    background-color: #007acc;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 80%;
+    margin: 5px 0;
+}
+
+/* Input Field */
+#message-input {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #007acc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f0f8ff;
+}
+
+/* Send Button */
+#send-button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #005f99;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    #chat-container {
+        width: 90%;
+    }
+}
