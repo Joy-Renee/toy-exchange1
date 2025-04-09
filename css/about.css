@@ -1,0 +1,113 @@
+/* General Page Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f8ff; /* Baby Blue */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Home Link */
+a {
+    color: #007acc; /* Light Blue */
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Header Section */
+header {
+    background-color: #007acc; /* Light Blue */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 122, 204, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Section Styles */
+section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 122, 204, 0.2);
+    width: 60%;
+    margin-top: 20px;
+    animation: slideIn 1.5s ease-in-out forwards;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+}
+
+/* Home Button */
+a {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007acc; /* Light Blue */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 122, 204, 0.2);
+}
+
+a:hover {
+    background-color: #005fa3; /* Darker blue on hover */
+}

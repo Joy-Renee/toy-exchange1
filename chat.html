@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Exchange</title>
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <a href="/">home</a>
+    <h2>Chat Exchange</h2>
+    <div id="chat-container">
+        <div id="toy-details">
+            <h3>Exchange Details</h3>
+            <p><strong>Buyer Toy:</strong> <span id="buyer-toy"></span></p>
+            <p><strong>Seller Toy:</strong> <span id="seller-toy"></span></p>
+        </div>
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
