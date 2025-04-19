@@ -90,10 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-            const toyData = Object.fromEntries(formData.entries());
-
-            console.log("Sending toy data:", toyData);  // Add this for debugging
-
 
             const token = localStorage.getItem("token");
             try {
@@ -101,9 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     method: "POST",
                     headers: {
                         "Authorization": `Bearer ${token}`,
-                        "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(toyData)
+                    body: formData,
                 });
 
                 const data = await response.json();
