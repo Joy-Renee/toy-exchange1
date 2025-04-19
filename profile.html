@@ -15,16 +15,39 @@
     <ul id="toy-list"></ul>
 
     <h3>Add New Toy</h3>
-    <form id="toy-form">
+    <form id="toy-form" enctype="multipart/form-data">
         <input type="text" placeholder="Name" name="name" required><br>
-        <input type="text" placeholder="Age Group" name="age_group" required><br>
+    
+        <!-- Dropdown for age group -->
+        <select name="age_group" required>
+            <option value="" disabled selected>Select Age Group</option>
+            <option value="0-3">0-3</option>
+            <option value="4-6">4-6</option>
+            <option value="7-8">7-8</option>
+            <option value="9-12">9-12</option>
+        </select><br>
+    
         <textarea placeholder="Description" name="description" required></textarea><br>
-        <input type="text" placeholder="Condition" name="condition" required><br>
+    
+        <!-- Dropdown for condition -->
+        <select name="condition" id="condition-select" required>
+            <option value="" disabled selected>Select Condition</option>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+            <option value="other">Other</option>
+        </select><br>
+    
+        <!-- Input for other condition (hidden by default) -->
+        <input type="text" id="other-condition" name="other_condition" placeholder="Please specify condition" style="display: none;"><br>
+    
         <input type="number" placeholder="Price" name="price" step="0.01" required><br>
-        <input type="text" placeholder="Image Filename" name="image_filename" required><br>
+        <input type="file" name="image" accept="image/*" required><br>
         <button type="submit">Add Toy</button>
     </form>
 
     <button onclick="logout()">Logout</button>
+
+    <script src="/js/profile.js"></script>
+
 </body>
 </html>
